@@ -1,0 +1,70 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// A community member who has RSVP'd to at least one event.
+// Looked up by phone (the canonical identifier on this site).
+model Rsvp {
+  id           String   @id @default(cuid())
+  // Stable identifier for the event (slug of title + ISO date)
+  eventId      String
+  eventTitle   String
+  eventDate    String   // YYYY-MM-DD (kept as string so events without a DB row still work)
+  eventStart   String   // "6:00 PM"
+  eventEnd     String   // "" if none
+  location     String
+  category     String
+  department   String
+  // Attendee info
+  name         String
+  phone        String   // E.164-ish, digits + maybe leading 1
+  partySize    Int      @default(1)
+  // Attendees beyond the primary (comma-separated names, e.g. kids)
+  attendees    String   @default("")
+  // SMS reminder opt-in: true => we will text them before the event
+  reminderOptIn Boolean @default(false)
+  reminderLeadMin Int   @default(60) // how many minutes before to send the reminder
+  // Status
+  cancelled    Boolean  @default(false)
+  // Audit
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  reminders    ReminderLog[]
+
+  @@index([phone])
+  @@index([eventDate])
+  @@index([eventId])
+}
+
+// Every SMS we send (or attempt to send) gets a row. This is how we avoid
+// double-sending reminders and how we report on delivery.
+model ReminderLog {
+  id           String   @id @default(cuid())
+  rsvpId       String
+  rsvp         Rsvp     @relation(fields: [rsvpId], references: [id], onDelete: Cascade)
+  // What kind of reminder: "confirmation" (RSVP received), "pre-event" (X min before), "cancellation"
+  kind         String
+  // ISO timestamp of when the event is (so we can compute lead time)
+  eventAt      DateTime
+  sentAt       DateTime @default(now())
+  // "queued" | "sent" | "failed" | "skipped"
+  status       String   @default("queued")
+  // Twilio message SID if we got one back
+  providerSid  String?
+  // Error message if status = failed
+  error        String?
+  // The message body that was sent (for audit)
+  body         String
+
+  @@index([rsvpId, kind])
+  @@index([eventAt])
+}
