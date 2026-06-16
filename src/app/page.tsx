@@ -1335,6 +1335,24 @@ interface MyRsvp {
   lastReminder: { kind: string; status: string; sentAt: string } | null;
 }
 
+/** Human label for the ReminderLog.kind field. */
+function reminderLabel(kind: string): string {
+  switch (kind) {
+    case "confirmation":
+      return "Confirmation";
+    case "pre-event-1d":
+      return "1-day reminder";
+    case "pre-event-1h":
+      return "1-hour reminder";
+    case "digest":
+      return "Sunday digest";
+    case "cancellation":
+      return "Cancellation";
+    default:
+      return kind;
+  }
+}
+
 function MyRsvpsView({
   phone,
   setPhone,
@@ -1439,15 +1457,18 @@ function MyRsvpsView({
                       >
                         <Icon name="bell" />
                         {r.reminderOptIn
-                          ? `Text reminder ${r.reminderLeadMin >= 60 ? `${Math.round(r.reminderLeadMin / 60)}h` : `${r.reminderLeadMin}min`} before`
-                          : "No text reminder"}
+                          ? "Reminders: 1 day + 1 hour before, + Sunday digest"
+                          : "No text reminders"}
                       </span>
-                      {r.lastReminder && r.lastReminder.kind === "confirmation" && (
-                        <span>
-                          · Confirmation {r.lastReminder.status === "sent" ? "sent" : "queued"}
-                        </span>
-                      )}
                     </div>
+                    {r.lastReminder && (
+                      <div className="myrsvp__row">
+                        <span>
+                          Last: {reminderLabel(r.lastReminder.kind)}{" "}
+                          {r.lastReminder.status === "sent" ? "sent" : "queued"}
+                        </span>
+                      </div>
+                    )}
                     {!isPast && (
                       <div className="myrsvp__actions">
                         <button
@@ -1659,12 +1680,13 @@ function RsvpModal({
                 <div className="rsvp__sms-body">
                   <div className="rsvp__sms-title">
                     <Icon name="bell" size={14} />
-                    Text me a reminder 1 hour before
+                    Text me reminders
                   </div>
                   <div className="rsvp__sms-note">
-                    We&apos;ll send one SMS an hour before the event starts. Your number is
-                    only used for this calendar — never shared. Reply STOP any time to opt
-                    out.
+                    We&apos;ll send you up to 3 texts per event: a confirmation now, a
+                    heads-up 1 day before, a reminder 1 hour before, plus a Sunday
+                    evening summary of your week. Your number is only used for this
+                    calendar — never shared. Reply STOP any time to opt out.
                   </div>
                 </div>
               </div>
