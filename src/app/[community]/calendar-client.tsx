@@ -708,7 +708,7 @@ function EventCard({
           {e.requiresRegistration ? (
             <span className="card__register-note">
               <Icon name="phone" />
-              Please call JP to register — space may be limited
+              Registration closed — contact Health Centre (204) 367-9990
             </span>
           ) : (
             <button
