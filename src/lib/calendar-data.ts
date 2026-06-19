@@ -36,7 +36,7 @@ export const CATEGORIES: Record<Category, string> = {
   special: "Special",
 };
 
-export const DEPARTMENTS: Record<Category, { name: string }> = {
+export const DEPARTMENTS: Record<Category, { name: string; supervisorName?: string; supervisorEmail?: string }> = {
   culture: { name: "Cultural Department" },
   health: { name: "Health Centre" },
   youth: { name: "Youth Services" },
@@ -44,6 +44,15 @@ export const DEPARTMENTS: Record<Category, { name: string }> = {
   family: { name: "Family Services" },
   special: { name: "Band Office" },
 };
+
+/**
+ * SUPERVISOR EMAILS — fill in the manager name and email for each department.
+ * Once set, the system automatically emails the supervisor 1 day before each
+ * event with a list of everyone who RSVP'd.
+ *
+ * Example:
+ *   culture: { name: "Cultural Department", supervisorName: "Mary", supervisorEmail: "mary@sagkeeng.ca" },
+ */
 
 /* ── NEWS & NOTICES ──────────────────────────────────────────────────────── */
 export interface NewsItem {
