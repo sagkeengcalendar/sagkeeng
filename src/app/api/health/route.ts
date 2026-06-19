@@ -28,3 +28,4 @@ export async function GET() {
   const allOk = Object.values(checks).every((v) => v === "ok" || v === "unknown");
   return NextResponse.json({ ok: allOk, checks, timestamp: new Date().toISOString() });
 }
+// Auto-deploy test: Fri Jun 19 17:38:54 UTC 2026
