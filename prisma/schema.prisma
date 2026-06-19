@@ -10,6 +10,22 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// A community on miina. Each published community has its own calendar page
+// at /<slug>. Slugs are lowercase, kebab-case, unique. The "sagkeeng" slug
+// is hardcoded in lib/communities.ts as a fallback when no DB row exists.
+model Community {
+  id        String   @id @default(cuid())
+  slug      String   @unique
+  name      String
+  tagline   String   @default("")
+  crestUrl  String?
+  published Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  rsvps     Rsvp[]
+}
+
 // A community member who has RSVP'd to at least one event.
 // Looked up by phone (the canonical identifier on this site).
 model Rsvp {
@@ -23,6 +39,10 @@ model Rsvp {
   location     String
   category     String
   department   String
+  // Community this RSVP belongs to. Stored as "cm_<slug>" so it can resolve
+  // even before the Community row is created (e.g. for the hardcoded sagkeeng).
+  communityId  String?
+  community    Community? @relation(fields: [communityId], references: [id], onDelete: SetNull)
   // Attendee info
   name         String
   phone        String   // E.164-ish, digits + maybe leading 1
@@ -43,6 +63,7 @@ model Rsvp {
   @@index([phone])
   @@index([eventDate])
   @@index([eventId])
+  @@index([communityId])
 }
 
 // Every SMS we send (or attempt to send) gets a row. This is how we avoid

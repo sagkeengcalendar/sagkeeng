@@ -12,11 +12,23 @@ function isAuthorized(req: NextRequest): boolean {
   return xHeader === expected || authHeader === `Bearer ${expected}`;
 }
 
-function getCommunityName(communityId: string): string {
+function getCommunityName(communityId: string | null): string {
+  if (!communityId) return "—";
   for (const c of Object.values(COMMUNITIES)) {
     if ("cm_" + c.slug === communityId) return c.name;
   }
+  // Fall back to stripping the "cm_" prefix and Title-casing it.
+  if (communityId.startsWith("cm_")) {
+    const slug = communityId.slice(3);
+    return slug.charAt(0).toUpperCase() + slug.slice(1);
+  }
   return communityId;
+}
+
+function getCommunitySlug(communityId: string | null): string {
+  if (!communityId) return "";
+  if (communityId.startsWith("cm_")) return communityId.slice(3);
+  return "";
 }
 
 export async function DELETE(req: NextRequest) {
@@ -52,11 +64,15 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ ok: true, totalRsvps: 0, totalAttendees: 0, rsvps: [], byEvent: [], dbError: "Database query failed." });
   }
 
-  const rsvpsWithCommunity = rsvps.map((r) => ({ ...r, community: getCommunityName(r.communityId), communitySlug: "" }));
+  const rsvpsWithCommunity = rsvps.map((r) => ({
+    ...r,
+    community: getCommunityName(r.communityId),
+    communitySlug: getCommunitySlug(r.communityId),
+  }));
   const byEvent: Record<string, any> = {};
   for (const r of rsvpsWithCommunity) {
     if (r.cancelled) continue;
-    if (!byEvent[r.eventId]) byEvent[r.eventId] = { eventId: r.eventId, eventTitle: r.eventTitle, eventDate: r.eventDate, eventStart: r.eventStart, location: r.location, community: r.community, count: 0, reminderOptIns: 0 };
+    if (!byEvent[r.eventId]) byEvent[r.eventId] = { eventId: r.eventId, eventTitle: r.eventTitle, eventDate: r.eventDate, eventStart: r.eventStart, location: r.location, community: r.community, communitySlug: r.communitySlug, department: r.department, count: 0, reminderOptIns: 0 };
     byEvent[r.eventId].count += r.partySize;
     if (r.reminderOptIn) byEvent[r.eventId].reminderOptIns += 1;
   }

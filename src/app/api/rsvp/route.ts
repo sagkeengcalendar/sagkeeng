@@ -23,6 +23,8 @@ const RsvpBody = z.object({
   attendees: z.array(z.string()).default([]),
   reminderOptIn: z.boolean().default(false),
   reminderLeadMin: z.number().int().min(15).max(24 * 60).default(60),
+  // Which community this RSVP belongs to (e.g. "sagkeeng").
+  communitySlug: z.string().optional(),
   // honeypot — must be empty
   contact_reason: z.string().optional(),
 });
@@ -71,6 +73,9 @@ export async function POST(req: NextRequest) {
   const partySize = Math.max(1, attendees.length);
 
   // Persist the RSVP
+  // communityId is stored as "cm_<slug>" so admin tools can resolve it back
+  // to a community name even before a Community row exists in the DB.
+  const communityId = body.communitySlug ? "cm_" + body.communitySlug : null;
   const rsvp = await db.rsvp.create({
     data: {
       eventId: body.eventId,
@@ -81,6 +86,7 @@ export async function POST(req: NextRequest) {
       location: ev.location,
       category: ev.category,
       department: ev.department,
+      communityId,
       name: body.name,
       phone: phoneE164,
       partySize,

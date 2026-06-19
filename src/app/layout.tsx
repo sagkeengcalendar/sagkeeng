@@ -23,29 +23,29 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sagkeeng.example"),
-  title: "Sagkeeng Anicinabe Nation — Community Calendar",
+  metadataBase: new URL("https://miina.example"),
+  title: "miina — Community Calendars",
   description:
-    "Events, ceremonies, and notices for Sagkeeng Anicinabe Nation. Zaagiing — Mouth of the River.",
+    "miina — community calendars for First Nations. Events, ceremonies, and notices with text reminders. miinawaa · again and again.",
   keywords: [
-    "Sagkeeng",
-    "Anicinabe",
+    "miina",
     "community calendar",
+    "First Nations",
     "events",
     "ceremonies",
-    "Treaty Days",
+    "text reminders",
   ],
   openGraph: {
-    title: "Win the grand prize this year at Treaty Days — RSVP now!",
+    title: "miina — community calendars for First Nations",
     description:
-      "See all Sagkeeng events and RSVP to enter the draw. Sagkeeng Anicinabe Nation Community Calendar.",
+      "Events, ceremonies, and notices with text reminders so nobody misses what matters. miinawaa · again and again.",
     type: "website",
     images: [{ url: "/hero/og-image.webp" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sagkeeng Anicinabe Nation — Community Calendar",
-    description: "Events, ceremonies, and notices. RSVP to enter the draw.",
+    title: "miina — Community Calendars",
+    description: "Events, ceremonies, and notices with text reminders.",
   },
 };
 

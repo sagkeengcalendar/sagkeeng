@@ -25,6 +25,8 @@ export interface RawEvent {
   info: string;
   spots?: number | null;
   featured?: boolean;
+  // If true, attendees must call to register instead of using online RSVP.
+  requiresRegistration?: boolean;
 }
 
 export const CATEGORIES: Record<Category, string> = {
@@ -214,6 +216,7 @@ export interface NormalizedEvent extends RawEvent {
   id: string;
   moon: boolean;
   recurring: boolean;
+  requiresRegistration: boolean;
 }
 
 function pad(n: number) {
@@ -240,6 +243,7 @@ function normalize(e: RawEvent & { moon?: boolean; recurring?: boolean }): Norma
     info: e.info || "",
     spots: e.spots ?? null,
     featured: !!e.featured,
+    requiresRegistration: !!e.requiresRegistration,
     moon: !!e.moon,
     recurring: !!e.recurring,
   };
