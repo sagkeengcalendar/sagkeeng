@@ -189,39 +189,24 @@ export default function CalendarApp({ community }: { community: CommunityInfo })
       });
   }, []);
 
-  // Welcome: only show if not already seen this session
+  // Welcome: show EVERY time the page loads (no localStorage "seen" check)
   useEffect(() => {
-    const fromTD = /[?&]from=treatydays/.test(window.location.search);
-    const seen = read("sk_welcome_seen");
-    if (fromTD || !seen) {
-      setWelcomeOpen(true);
-    } else {
-      setWelcomeOpen(false);
-    }
+    setWelcomeOpen(true);
   }, []);
 
   const closeWelcome = useCallback(() => {
     setWelcomeOpen(false);
-    store("sk_welcome_seen", "1");
   }, []);
 
-  // Restore persona
-  useEffect(() => {
-    const saved = read("sk_persona") as PersonaKey | null;
-    if (saved && PERSONAS[saved]) {
-      setPersona(saved);
-      setSuggestedMode(true);
-    }
-  }, []);
+  // Persona is NOT restored from localStorage — every visit starts fresh
+  // so people don't get stuck on "For a man" and can't see kids' events
 
   const setPersonaAndClose = useCallback((k: PersonaKey | null) => {
     setPersona(k);
     if (k) {
       setSuggestedMode(true);
-      store("sk_persona", k);
     } else {
       setSuggestedMode(false);
-      store("sk_persona", "");
     }
     setView("today");
     setPicked(null);
