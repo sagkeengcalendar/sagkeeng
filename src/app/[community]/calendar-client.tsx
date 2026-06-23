@@ -41,6 +41,7 @@ import {
 import { MiinaLogo } from "@/components/calendar/miina-logo";
 import { SmudgeCanvas } from "@/components/calendar/smudge-canvas";
 import { RotatingSlogans } from "@/components/calendar/rotating-slogans";
+import { InstallAppButton } from "@/components/calendar/install-app-button";
 
 const DRAW_NAME = "the grand prize";
 
@@ -497,6 +498,7 @@ function Hero({
             <button className="hero__btn" onClick={onNotices}>
               Notices
             </button>
+            <InstallAppButton />
           </div>
         </div>
         <div className="hero__strips">

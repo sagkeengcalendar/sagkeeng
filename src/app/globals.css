@@ -1262,3 +1262,107 @@ a { color: inherit; text-decoration: none; }
   .admin-rsvps__attendee { flex-direction: column; align-items: flex-start; gap: 8px; }
   .admin-rsvps__attendee-meta { font-size: 12px; }
 }
+
+/* ============================================================================
+   INSTALL APP BUTTON (PWA — Add to Home Screen)
+   ============================================================================ */
+.install-app-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  background: rgba(245, 166, 35, 0.2);
+  border: 1px solid rgba(245, 166, 35, 0.4);
+  color: #ffce7a;
+  backdrop-filter: blur(10px);
+  transition: background 0.2s, transform 0.2s;
+  white-space: nowrap;
+}
+.install-app-btn:hover {
+  background: rgba(245, 166, 35, 0.3);
+  transform: translateY(-1px);
+}
+.install-app-icon {
+  font-size: 14px;
+}
+
+/* iOS instructions modal */
+.install-ios-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(14, 28, 32, 0.7);
+  backdrop-filter: blur(4px);
+}
+.install-ios-box {
+  position: relative;
+  background: var(--surface, #fff);
+  border-radius: 20px;
+  padding: 28px 24px 24px;
+  max-width: 340px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.3);
+  animation: rise 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.install-ios-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 22px;
+  color: var(--text-soft, #888);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.install-ios-icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+.install-ios-box h3 {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-weight: 600;
+  font-size: 1.3rem;
+  margin-bottom: 14px;
+  color: var(--text, #1a2e2b);
+}
+.install-ios-box ol {
+  text-align: left;
+  padding-left: 20px;
+  margin-bottom: 18px;
+}
+.install-ios-box ol li {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-soft, #4a5c58);
+  margin-bottom: 8px;
+}
+.install-ios-box ol strong {
+  color: var(--text, #1a2e2b);
+}
+.install-ios-done {
+  width: 100%;
+  height: 46px;
+  background: var(--clay, #c75b39);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.install-ios-done:hover {
+  background: var(--clay-deep, #a8492c);
+}
+
+@media (min-width: 769px) {
+  .install-app-btn { display: none; }
+}

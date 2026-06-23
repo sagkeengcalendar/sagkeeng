@@ -23,7 +23,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://miina.example"),
+  metadataBase: new URL("https://miina.ca"),
   title: "miina — Community Calendars",
   description:
     "miina — community calendars for First Nations. Events, ceremonies, and notices with text reminders. miinawaa · again and again.",
@@ -35,6 +35,16 @@ export const metadata: Metadata = {
     "ceremonies",
     "text reminders",
   ],
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    title: "miina",
+    statusBarStyle: "black-translucent",
+  },
+  icons: {
+    icon: "/icon-192.png",
+    apple: "/icon-512.png",
+  },
   openGraph: {
     title: "miina — community calendars for First Nations",
     description:
