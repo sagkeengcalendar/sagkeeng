@@ -39,8 +39,8 @@ export const CATEGORIES: Record<Category, string> = {
 };
 
 export const DEPARTMENTS: Record<Category, { name: string; supervisorName?: string; supervisorEmail?: string }> = {
-  culture: { name: "Cultural Department" },
-  health: { name: "Health Centre" },
+  culture: { name: "Cultural Department", supervisorName: "Darlene Starr-Courchene", supervisorEmail: "darlene.courchene@sagkeenghealth.com" },
+  health: { name: "Health Centre", supervisorName: "Cheryl Bird", supervisorEmail: "cbird@sagkeenghealth.com" },
   youth: { name: "Youth Services" },
   elders: { name: "Elder Services" },
   family: { name: "Family Services" },
@@ -85,9 +85,9 @@ export const NEWS: NewsItem[] = [
 export const FULL_MOONS = [
   "2026-04-12",
   "2026-05-12",
-  "2026-06-10",
-  "2026-07-10",
-  "2026-08-08",
+  "2026-06-29",
+  "2026-07-29",
+  "2026-08-27",
   "2026-09-07",
   "2026-10-06",
 ];
@@ -208,6 +208,154 @@ export const EVENTS: RawEvent[] = [
     info: "Full-day river float at Pinawa. Bring sunscreen, a hat, and a towel. Lunch and transportation provided.",
     spots: 24,
   },
+
+  /* ── NEW EVENTS (July–August 2026) ──────────────────────────────────────── */
+
+  // Grief and Loss Support Group — July 2, 9, 16, 23, 28, 30, August 4, 6
+  {
+    date: "2026-07-02", start: "5:00 PM", end: "7:00 PM",
+    title: "Grief and Loss Support Group", location: "Health Centre", setting: "indoor",
+    category: "health", department: "health",
+    contact: "(204) 367-9990",
+    info: "A safe space to share, heal, and grieve together. All community members welcome.",
+    spots: null, recurring: true,
+  },
+  {
+    date: "2026-07-09", start: "5:00 PM", end: "7:00 PM",
+    title: "Grief and Loss Support Group", location: "Health Centre", setting: "indoor",
+    category: "health", department: "health",
+    contact: "(204) 367-9990",
+    info: "A safe space to share, heal, and grieve together. All community members welcome.",
+    spots: null, recurring: true,
+  },
+  {
+    date: "2026-07-16", start: "5:00 PM", end: "7:00 PM",
+    title: "Grief and Loss Support Group", location: "Health Centre", setting: "indoor",
+    category: "health", department: "health",
+    contact: "(204) 367-9990",
+    info: "A safe space to share, heal, and grieve together. All community members welcome.",
+    spots: null, recurring: true,
+  },
+  {
+    date: "2026-07-23", start: "5:00 PM", end: "7:00 PM",
+    title: "Grief and Loss Support Group", location: "Health Centre", setting: "indoor",
+    category: "health", department: "health",
+    contact: "(204) 367-9990",
+    info: "A safe space to share, heal, and grieve together. All community members welcome.",
+    spots: null, recurring: true,
+  },
+  {
+    date: "2026-07-28", start: "5:00 PM", end: "7:00 PM",
+    title: "Grief and Loss Support Group", location: "Health Centre", setting: "indoor",
+    category: "health", department: "health",
+    contact: "(204) 367-9990",
+    info: "A safe space to share, heal, and grieve together. All community members welcome.",
+    spots: null, recurring: true,
+  },
+  {
+    date: "2026-07-30", start: "5:00 PM", end: "7:00 PM",
+    title: "Grief and Loss Support Group", location: "Health Centre", setting: "indoor",
+    category: "health", department: "health",
+    contact: "(204) 367-9990",
+    info: "A safe space to share, heal, and grieve together. All community members welcome.",
+    spots: null, recurring: true,
+  },
+  {
+    date: "2026-08-04", start: "5:00 PM", end: "7:00 PM",
+    title: "Grief and Loss Support Group", location: "Health Centre", setting: "indoor",
+    category: "health", department: "health",
+    contact: "(204) 367-9990",
+    info: "A safe space to share, heal, and grieve together. All community members welcome.",
+    spots: null, recurring: true,
+  },
+  {
+    date: "2026-08-06", start: "5:00 PM", end: "7:00 PM",
+    title: "Grief and Loss Support Group", location: "Health Centre", setting: "indoor",
+    category: "health", department: "health",
+    contact: "(204) 367-9990",
+    info: "A safe space to share, heal, and grieve together. All community members welcome.",
+    spots: null, recurring: true,
+  },
+
+  // Chainsaw Carving Workshop — July 16, Arbor behind Health Centre, Cheryl Bird
+  {
+    date: "2026-07-16", start: "1:00 PM", end: "5:00 PM",
+    title: "Chainsaw Carving Workshop", location: "Arbor (behind Health Centre)", setting: "outdoor",
+    category: "culture", department: "culture",
+    contact: "(204) 367-9990",
+    info: "Learn the art of chainsaw carving. Run by Cheryl Bird. All materials provided. No experience necessary.",
+    spots: 15, featured: true,
+  },
+
+  // Traditional Healer Kathleen Greene — July 6-10, appointments by calling Health Centre
+  {
+    date: "2026-07-06", start: "9:30 AM", end: "2:30 PM",
+    title: "Traditional Healer — Kathleen Greene", location: "Health Centre", setting: "indoor",
+    category: "health", department: "health",
+    contact: "(204) 367-9990",
+    info: "Traditional healing appointments with Kathleen Greene. By appointment only — call the Health Centre at (204) 367-9990 to book. Available July 6–10, 9:30 AM–2:30 PM daily.",
+    spots: null, requiresRegistration: true,
+  },
+  {
+    date: "2026-07-07", start: "9:30 AM", end: "2:30 PM",
+    title: "Traditional Healer — Kathleen Greene", location: "Health Centre", setting: "indoor",
+    category: "health", department: "health",
+    contact: "(204) 367-9990",
+    info: "Traditional healing appointments with Kathleen Greene. By appointment only — call (204) 367-9990.",
+    spots: null, requiresRegistration: true, recurring: true,
+  },
+  {
+    date: "2026-07-08", start: "9:30 AM", end: "2:30 PM",
+    title: "Traditional Healer — Kathleen Greene", location: "Health Centre", setting: "indoor",
+    category: "health", department: "health",
+    contact: "(204) 367-9990",
+    info: "Traditional healing appointments with Kathleen Greene. By appointment only — call (204) 367-9990.",
+    spots: null, requiresRegistration: true, recurring: true,
+  },
+  {
+    date: "2026-07-09", start: "9:30 AM", end: "2:30 PM",
+    title: "Traditional Healer — Kathleen Greene", location: "Health Centre", setting: "indoor",
+    category: "health", department: "health",
+    contact: "(204) 367-9990",
+    info: "Traditional healing appointments with Kathleen Greene. By appointment only — call (204) 367-9990.",
+    spots: null, requiresRegistration: true, recurring: true,
+  },
+  {
+    date: "2026-07-10", start: "9:30 AM", end: "2:30 PM",
+    title: "Traditional Healer — Kathleen Greene", location: "Health Centre", setting: "indoor",
+    category: "health", department: "health",
+    contact: "(204) 367-9990",
+    info: "Traditional healing appointments with Kathleen Greene. By appointment only — call (204) 367-9990.",
+    spots: null, requiresRegistration: true, recurring: true,
+  },
+
+  // Moccasin Making with Jennifer Fontaine — July 21 & 23, 1–4 PM, IRS Trailer
+  {
+    date: "2026-07-21", start: "1:00 PM", end: "4:00 PM",
+    title: "Moccasin Making Workshop", location: "IRS Trailer", setting: "indoor",
+    category: "culture", department: "culture",
+    contact: "(204) 367-9990",
+    info: "Learn to make traditional moccasins with Jennifer Fontaine. All materials provided. All skill levels welcome.",
+    spots: 12, featured: true,
+  },
+  {
+    date: "2026-07-23", start: "1:00 PM", end: "4:00 PM",
+    title: "Moccasin Making Workshop", location: "IRS Trailer", setting: "indoor",
+    category: "culture", department: "culture",
+    contact: "(204) 367-9990",
+    info: "Learn to make traditional moccasins with Jennifer Fontaine. All materials provided. All skill levels welcome.",
+    spots: 12, recurring: true,
+  },
+
+  // Berry Fast Ceremony — presented by Beverly Courchene, Ivy Canard, and previous Honorary Berry Fasters
+  {
+    date: "2026-07-12", start: "6:00 AM", end: "12:00 PM",
+    title: "Berry Fast Ceremony", location: "Turtle Lodge", setting: "outdoor",
+    category: "culture", department: "culture",
+    contact: "(204) 367-9990",
+    info: "Berry Fast Ceremony presented by Beverly Courchene, Ivy Canard, and previous Honorary Berry Fasters. A ceremony honouring the coming of age for young women. All are welcome to support and attend.",
+    spots: null, featured: true,
+  },
 ];
 
 /* ── AUTO-GENERATED EVENTS ────────────────────────────────────────────────── */
@@ -300,17 +448,17 @@ export function buildAllEvents(): NormalizedEvent[] {
       }
     }
   }
-  // Full Moon Ceremonies
+  // Full Moon Ceremonies — presented by Darlene Starr-Courchene and Rhaeanne Hibi
   FULL_MOONS.forEach((date) => {
     const mo = parseInt(date.split("-")[1], 10);
     const moon = MOON_NAMES[mo];
     list.push(
       normalize({
-        date, start: "Dusk", end: "",
+        date, start: "7:00 PM", end: "",
         title: "Full Moon Ceremony" + (moon ? " — " + moon.oji : ""),
-        location: "Sacred Grounds", setting: "outdoor", category: "culture", department: "culture",
-        contact: "204-367-2290",
-        info: moon ? moon.oji + " (" + moon.en + "). All are welcome." : "Full moon gathering.",
+        location: "Turtle Lodge", setting: "outdoor", category: "culture", department: "culture",
+        contact: "(204) 367-9990",
+        info: (moon ? moon.oji + " (" + moon.en + "). " : "") + "Presented by Darlene Starr-Courchene and Rhaeanne Hibi. All are welcome.",
         moon: true,
       }),
     );
