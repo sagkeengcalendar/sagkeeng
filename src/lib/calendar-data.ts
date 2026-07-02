@@ -66,6 +66,12 @@ export interface NewsItem {
 
 export const NEWS: NewsItem[] = [
   {
+    type: "advisory",
+    title: "Sagkeeng Health Centre closed July 1 for Canada Day",
+    info: "The Health Centre will be closed on Wednesday, July 1 for Canada Day. We reopen Thursday, July 2 at 9:00 AM. For emergencies, call 911.",
+    posted: "June 2026",
+  },
+  {
     type: "culture",
     title: "Grand prize announcement coming soon",
     info:
@@ -211,70 +217,70 @@ export const EVENTS: RawEvent[] = [
 
   /* ── NEW EVENTS (July–August 2026) ──────────────────────────────────────── */
 
-  // Grief and Loss Support Group — July 2, 9, 16, 23, 28, 30, August 4, 6
+  // Grief Recovery Method Support Group — July 2, 9, 16, 23, 28, 30, August 4, 6
   {
-    date: "2026-07-02", start: "5:00 PM", end: "7:00 PM",
-    title: "Grief and Loss Support Group", location: "Health Centre", setting: "indoor",
+    date: "2026-07-02", start: "1:00 PM", end: "3:00 PM",
+    title: "Grief Recovery Method Support Group", location: "SHC ATCO Trailer", setting: "indoor",
     category: "health", department: "health",
-    contact: "(204) 367-9990",
-    info: "A safe space to share, heal, and grieve together. All community members welcome.",
-    spots: null, recurring: true,
+    contact: "(204) 367-9990 ext. 219",
+    info: "Grief Recovery Method support group. 8 sessions, fully funded. Register with Linda Courchene at 204-367-9990 ext. 219. All community members welcome.",
+    spots: null, recurring: true, requiresRegistration: true,
   },
   {
-    date: "2026-07-09", start: "5:00 PM", end: "7:00 PM",
-    title: "Grief and Loss Support Group", location: "Health Centre", setting: "indoor",
+    date: "2026-07-09", start: "1:00 PM", end: "3:00 PM",
+    title: "Grief Recovery Method Support Group", location: "SHC ATCO Trailer", setting: "indoor",
     category: "health", department: "health",
-    contact: "(204) 367-9990",
-    info: "A safe space to share, heal, and grieve together. All community members welcome.",
-    spots: null, recurring: true,
+    contact: "(204) 367-9990 ext. 219",
+    info: "Grief Recovery Method support group. 8 sessions, fully funded. Register with Linda Courchene at 204-367-9990 ext. 219. All community members welcome.",
+    spots: null, recurring: true, requiresRegistration: true,
   },
   {
-    date: "2026-07-16", start: "5:00 PM", end: "7:00 PM",
-    title: "Grief and Loss Support Group", location: "Health Centre", setting: "indoor",
+    date: "2026-07-16", start: "1:00 PM", end: "3:00 PM",
+    title: "Grief Recovery Method Support Group", location: "SHC ATCO Trailer", setting: "indoor",
     category: "health", department: "health",
-    contact: "(204) 367-9990",
-    info: "A safe space to share, heal, and grieve together. All community members welcome.",
-    spots: null, recurring: true,
+    contact: "(204) 367-9990 ext. 219",
+    info: "Grief Recovery Method support group. 8 sessions, fully funded. Register with Linda Courchene at 204-367-9990 ext. 219. All community members welcome.",
+    spots: null, recurring: true, requiresRegistration: true,
   },
   {
-    date: "2026-07-23", start: "5:00 PM", end: "7:00 PM",
-    title: "Grief and Loss Support Group", location: "Health Centre", setting: "indoor",
+    date: "2026-07-23", start: "1:00 PM", end: "3:00 PM",
+    title: "Grief Recovery Method Support Group", location: "SHC ATCO Trailer", setting: "indoor",
     category: "health", department: "health",
-    contact: "(204) 367-9990",
-    info: "A safe space to share, heal, and grieve together. All community members welcome.",
-    spots: null, recurring: true,
+    contact: "(204) 367-9990 ext. 219",
+    info: "Grief Recovery Method support group. 8 sessions, fully funded. Register with Linda Courchene at 204-367-9990 ext. 219. All community members welcome.",
+    spots: null, recurring: true, requiresRegistration: true,
   },
   {
-    date: "2026-07-28", start: "5:00 PM", end: "7:00 PM",
-    title: "Grief and Loss Support Group", location: "Health Centre", setting: "indoor",
+    date: "2026-07-28", start: "1:00 PM", end: "3:00 PM",
+    title: "Grief Recovery Method Support Group", location: "SHC ATCO Trailer", setting: "indoor",
     category: "health", department: "health",
-    contact: "(204) 367-9990",
-    info: "A safe space to share, heal, and grieve together. All community members welcome.",
-    spots: null, recurring: true,
+    contact: "(204) 367-9990 ext. 219",
+    info: "Grief Recovery Method support group. 8 sessions, fully funded. Register with Linda Courchene at 204-367-9990 ext. 219. All community members welcome.",
+    spots: null, recurring: true, requiresRegistration: true,
   },
   {
-    date: "2026-07-30", start: "5:00 PM", end: "7:00 PM",
-    title: "Grief and Loss Support Group", location: "Health Centre", setting: "indoor",
+    date: "2026-07-30", start: "1:00 PM", end: "3:00 PM",
+    title: "Grief Recovery Method Support Group", location: "SHC ATCO Trailer", setting: "indoor",
     category: "health", department: "health",
-    contact: "(204) 367-9990",
-    info: "A safe space to share, heal, and grieve together. All community members welcome.",
-    spots: null, recurring: true,
+    contact: "(204) 367-9990 ext. 219",
+    info: "Grief Recovery Method support group. 8 sessions, fully funded. Register with Linda Courchene at 204-367-9990 ext. 219. All community members welcome.",
+    spots: null, recurring: true, requiresRegistration: true,
   },
   {
-    date: "2026-08-04", start: "5:00 PM", end: "7:00 PM",
-    title: "Grief and Loss Support Group", location: "Health Centre", setting: "indoor",
+    date: "2026-08-04", start: "1:00 PM", end: "3:00 PM",
+    title: "Grief Recovery Method Support Group", location: "SHC ATCO Trailer", setting: "indoor",
     category: "health", department: "health",
-    contact: "(204) 367-9990",
-    info: "A safe space to share, heal, and grieve together. All community members welcome.",
-    spots: null, recurring: true,
+    contact: "(204) 367-9990 ext. 219",
+    info: "Grief Recovery Method support group. 8 sessions, fully funded. Register with Linda Courchene at 204-367-9990 ext. 219. All community members welcome.",
+    spots: null, recurring: true, requiresRegistration: true,
   },
   {
-    date: "2026-08-06", start: "5:00 PM", end: "7:00 PM",
-    title: "Grief and Loss Support Group", location: "Health Centre", setting: "indoor",
+    date: "2026-08-06", start: "1:00 PM", end: "3:00 PM",
+    title: "Grief Recovery Method Support Group", location: "SHC ATCO Trailer", setting: "indoor",
     category: "health", department: "health",
-    contact: "(204) 367-9990",
-    info: "A safe space to share, heal, and grieve together. All community members welcome.",
-    spots: null, recurring: true,
+    contact: "(204) 367-9990 ext. 219",
+    info: "Grief Recovery Method support group. 8 sessions, fully funded. Register with Linda Courchene at 204-367-9990 ext. 219. All community members welcome.",
+    spots: null, recurring: true, requiresRegistration: true,
   },
 
   // Chainsaw Carving Workshop — July 16, Arbor behind Health Centre, Cheryl Bird
@@ -347,13 +353,49 @@ export const EVENTS: RawEvent[] = [
     spots: 12, recurring: true,
   },
 
-  // Berry Fast Ceremony — presented by Beverly Courchene, Ivy Canard, and previous Honorary Berry Fasters
+  // Star Blanket Hand Sewing Classes — July 6, 13, 20 (Mondays), 11am–3pm, Band Hall
   {
-    date: "2026-07-12", start: "6:00 AM", end: "12:00 PM",
+    date: "2026-07-06", start: "11:00 AM", end: "3:00 PM",
+    title: "Star Blanket — Hand Sewing Class", location: "Sagkeeng Band Hall", setting: "indoor",
+    category: "culture", department: "culture",
+    contact: "(204) 367-9990 ext. 192",
+    info: "Hand sewing star blanket classes. No child care available. Register: 204-367-9990 Youth Wellness ext. 192.",
+    spots: 15, requiresRegistration: true,
+  },
+  {
+    date: "2026-07-13", start: "11:00 AM", end: "3:00 PM",
+    title: "Star Blanket — Hand Sewing Class", location: "Sagkeeng Band Hall", setting: "indoor",
+    category: "culture", department: "culture",
+    contact: "(204) 367-9990 ext. 192",
+    info: "Hand sewing star blanket classes. No child care available. Register: 204-367-9990 Youth Wellness ext. 192.",
+    spots: 15, requiresRegistration: true, recurring: true,
+  },
+  {
+    date: "2026-07-20", start: "11:00 AM", end: "3:00 PM",
+    title: "Star Blanket — Hand Sewing Class", location: "Sagkeeng Band Hall", setting: "indoor",
+    category: "culture", department: "culture",
+    contact: "(204) 367-9990 ext. 192",
+    info: "Hand sewing star blanket classes. No child care available. Register: 204-367-9990 Youth Wellness ext. 192.",
+    spots: 15, requiresRegistration: true, recurring: true,
+  },
+
+  // One Pan Cooking Class — July 10, 10am–3pm, Family Wellness Building, ages 16-26
+  {
+    date: "2026-07-10", start: "10:00 AM", end: "3:00 PM",
+    title: "One Pan Cooking Class", location: "Family Wellness Building, 329 Northshore Road", setting: "indoor",
+    category: "youth", department: "youth", audience: ["youth"],
+    contact: "(204) 949-1649 ext. 1314",
+    info: "Learn to cook with one pan! For ages 16–26. Hosted by Sagkeeng Child & Family Services. Contact 204-949-1649 ext. 1314.",
+    spots: 20, featured: true,
+  },
+
+  // Berry Fast Ceremony — July 20, 10am–5pm, Turtle Lodge, Cheryl Bird
+  {
+    date: "2026-07-20", start: "10:00 AM", end: "5:00 PM",
     title: "Berry Fast Ceremony", location: "Turtle Lodge", setting: "outdoor",
     category: "culture", department: "culture",
-    contact: "(204) 367-9990",
-    info: "Berry Fast Ceremony presented by Beverly Courchene, Ivy Canard, and previous Honorary Berry Fasters. A ceremony honouring the coming of age for young women. All are welcome to support and attend.",
+    contact: "(204) 367-9990 ext. 192",
+    info: "Rites of passage for Anishinaabe kwe. Lunch served. Presented by Beverly Courchene, Ivy Canard, and previous Honorary Berry Fasters. Contact Cheryl Bird at 204-367-9990 ext. 192.",
     spots: null, featured: true,
   },
 ];
